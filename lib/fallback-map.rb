@@ -1,7 +1,7 @@
 class FallbackMap
 	class << self
 		def walk(op, map, path)
-			return map if path.length == 0
+			return (op == :get) ? map : true if path.length == 0
 
 			got_next = false
 			n = nil
